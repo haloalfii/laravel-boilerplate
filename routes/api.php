@@ -21,4 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function () {
     Route::get('/playground', [\App\Http\Controllers\PlaygroundController::class, 'playgroundSuccess']);
     Route::get('/playground-error', [\App\Http\Controllers\PlaygroundController::class, 'playgroundError']);
+
+//    Todo List
+    Route::resource('tasks', \App\Http\Controllers\TaskController::class);
 });
